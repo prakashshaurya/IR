@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity 
 #####  define documents ######
-document = ["This is the first document.","This document is the second document.","And this is the third one.","Is this the first document?",]
+document = ["To do is to be to be is to do.","To be or not to be i am what i am.","think before i am do be do be do.","do do do da da da let it be let it be"]
 tf_idf_vectorizer = TfidfVectorizer()
 tf_idf_sparse=tf_idf_vectorizer.fit_transform(document)
 tf_idf_dense = tf_idf_sparse.todense()
@@ -54,7 +54,7 @@ def termFrequencyAdder(arr):
 idf = termFrequencyAdder(dense_array)
 idf_df = pd.DataFrame(idf,index=vectorizer.get_feature_names_out())
 
-query = "third document"
+query = "to do"
 query_vectorizer = CountVectorizer()
 query_Sparse = query_vectorizer.fit_transform([query])
 query_dense = query_Sparse.toarray()
